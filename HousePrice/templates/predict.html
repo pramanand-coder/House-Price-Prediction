@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        * {
+            background-color: black;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .input-group input {
+            padding: 8px;
+            width: 50%;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+        .btn {
+            color: black;
+            background-color: green;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: darkgreen;
+        }
+        .result {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Input</h1>
+        <form method="GET" action="result">
+            <div class="input-group">
+                <label for="n1">Feature 1 (e.g., Avg. Area Income):</label>
+                <input type="number" step="any" id="n1" name="n1" required>
+            </div>
+            <div class="input-group">
+                <label for="n2">Feature 2 (e.g., Avg. Area House Age):</label>
+                <input type="number" step="any" id="n2" name="n2" required>
+            </div>
+            <div class="input-group">
+                <label for="n3">Feature 3 (e.g., Avg. Area Number of Rooms):</label>
+                <input type="number" step="any" id="n3" name="n3" required>
+            </div>
+            <div class="input-group">
+                <label for="n4">Feature 4 (e.g., Avg. Area Number of Bedrooms):</label>
+                <input type="number" step="any" id="n4" name="n4" required>
+            </div>
+            <div class="input-group">
+                <label for="n5">Feature 5 (e.g., Area Population):</label>
+                <input type="number" step="any" id="n5" name="n5" required>
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if result2 %}
+        <div class="result">
+            <h2>{{ result2 }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
